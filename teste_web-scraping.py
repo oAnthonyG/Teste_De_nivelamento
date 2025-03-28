@@ -1,16 +1,23 @@
 import wget
 import requests
 from bs4 import BeautifulSoup
+import zipfile
 
 link_site = 'https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos'
 
 requisicao = requests.get(link_site)
-print(requisicao)
-
 site = BeautifulSoup(requisicao.text, "html.parser")
 
-pesquisa = site.find_all("a", class_="internal-link")
+pesquisas = site.find_all('a')
+pdf_links = [link.get('href') for link in pesquisas if 'pdf' in link.get('href', '') and ('Anexo_I' in link.get('href', '') or 'Anexo_II' in link.get('href', ''))]
 
-print(pesquisa[0])
-# link = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf"
-# wget.download(link, 'anexo1.pdf')
+arquivos_baixados = []
+for nome_arquivo in pdf_links:
+  nome_arquivo_local = nome_arquivo.split("/")[-1]
+  print(f"baixando {nome_arquivo_local}")
+  wget.download(nome_arquivo)
+  arquivos_baixados.append(nome_arquivo_local)
+
+with zipfile.ZipFile('Anexos.zip', 'w') as zipf:
+  for pdf in arquivos_baixados:
+    zipf.write(pdf, pdf)
