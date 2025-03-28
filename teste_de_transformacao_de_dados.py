@@ -9,8 +9,8 @@ lista_tabelas = tabula.read_pdf("Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf", p
 
 df = lista_tabelas[0]
 df = df.rename(columns=abreviacoes)
-df.to_csv('arquivo_csv_teste.csv', index=False)
+df.to_csv('Rol_de_Procedimentos_e_Eventos_em_Saúde.csv', index=False)
 
 with zipfile.ZipFile("Teste_Anthony_Guilherme.zip", "w") as zipf:
-  zipf.write("arquivo_csv_teste.csv", arcname="arquivo_csv_teste.csv")
+  zipf.write("Rol_de_Procedimentos_e_Eventos_em_Saúde.csv", arcname="Rol_de_Procedimentos_e_Eventos_em_Saúde.csv")
 
