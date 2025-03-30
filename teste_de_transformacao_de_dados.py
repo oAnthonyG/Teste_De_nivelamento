@@ -5,9 +5,9 @@ abreviacoes = {
   'AMB': 'Seg. Ambulatorial'
 }
 
-lista_tabelas = tabula.read_pdf("Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf", pages="4")
+pdf_com_tabelas = tabula.read_pdf("Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf", pages="4")
 
-df = lista_tabelas[0]
+df = pdf_com_tabelas[0]
 df = df.rename(columns=abreviacoes)
 df.to_csv('Rol_de_Procedimentos_e_Eventos_em_Saúde.csv', index=False)
 
