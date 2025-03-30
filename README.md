@@ -1,6 +1,6 @@
 # Teste de Nivelamento
 
-Este repositório contém as respostas de um teste de nivelamento, como o próprio nome sugere. Aqui, você encontrará as soluções para os testes realizados, com o intuito de demonstrar o meu conhecimento sobre os tópicos abordados. Agradeço pela oportunidade de participar deste desafio, que me permitiu aprimorar minhas habilidades e colocar à prova o que aprendi até agora.
+Este repositório contém as respostas de um teste de nivelamento, como o próprio nome sugere. Aqui, contém as soluções para os testes realizados, com o intuito de demonstrar o meu conhecimento sobre os tópicos abordados. Agradeço pela oportunidade de participar deste desafio, que me permitiu aprimorar minhas habilidades e colocar à prova o que aprendi até agora.
 
 Esse processo tem sido muito enriquecedor, pois me permitiu entender melhor minhas áreas de força e também onde posso melhorar. Espero que este repositório sirva como uma demonstração clara do meu aprendizado, capacidade e dedicação ao longo dessa jornada.
 
