@@ -17,10 +17,11 @@ Neste teste, criei um script em Python para realizar a seguinte tarefa:
 **Ferramentas utilizadas:**
 - **Linguagem:** Python
 - **Bibliotecas:** 
-  - Wget
+  - Wget        
   - Requests
   - BeautifulSoup
   - ZipFile
+  - Para a instalação das Blibliotecas é nessario digitar no Terminal Pip install 'nome da biblioteca'
 
 Arquivo: `teste_web-scraping.py`
 
@@ -39,6 +40,7 @@ Neste teste, criei um script em Python para realizar a seguinte tarefa:
 - **Bibliotecas:** 
   - Tabula
   - ZipFile
+  - Para a instalação das Blibliotecas é nessario digitar no Terminal Pip install 'nome da biblioteca'
 
 Arquivo: `teste_de_transformacao_de_dados.py`
 
