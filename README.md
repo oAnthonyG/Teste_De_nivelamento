@@ -58,7 +58,3 @@ Neste teste, após baixar arquivos específicos manualmente, criei um script SQL
 Arquivo: `teste_de_banco_de_dados.sql`
 
 ---
-
-## Teste Final
-
-Descrição do teste a ser completada em breve.
