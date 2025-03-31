@@ -60,3 +60,67 @@ Neste teste, após baixar arquivos específicos manualmente, criei um script SQL
 Arquivo: `teste_de_banco_de_dados.sql`
 
 ---
+
+## Teste de Banco de Dados
+
+Neste teste, desenvolvi um sistema que consiste em uma interface web interativa utilizando Vue.js, conectada a um servidor backend escrito em Python. O objetivo foi criar uma API que acessa um banco de dados gerenciado no DBeaver e exibe os dados na interface.
+
+**Ferramentas utilizadas:**
+
+- **Linguagem:** Python (Flask)
+
+- **Banco de Dados:** SQL (Gerenciado no DBeaver)
+
+- **Linguagem Frontend:** JavaScript (Vue.js)
+
+Arquivos: `buscador_de_informacao` (Código da interface web)
+          `servidor.py`             (Script do servidor)
+
+
+**Instalando o Vue.js**
+
+Para instalar o Vue.js e configurar um novo projeto, siga os passos abaixo:
+
+1. Instale o Node.js (se ainda não tiver instalado)
+  [:Download do Node.js](https://nodejs.org/)
+
+2. Instale o Vue CLI globalmente:
+```bash
+npm install -g @vue/cli
+```
+
+3. Acesse a pasta do projeto existente e instale as dependências:
+```bash
+cd buscador_de_informacao
+npm install
+```
+
+4. Inicie o servidor do Vue.js:
+```bash
+npm run dev
+```
+
+**Instalando as Bibliotecas Python Necessárias**
+Para instalar as bibliotecas usadas no backend, utilize o seguinte comando:
+```bash
+pip install MySQLdb Flask Flask-Cors
+pip install jsonify make_response
+```
+
+**Executando o Projeto**
+
+1. Executar o backend (API Flask):
+```bash
+cd src/server
+python server.py
+```
+
+2. Executar o frontend (Vue.js):
+```bash
+cd buscador_de_informacao
+npm run dev
+```
+3. Acessar o projeto no navegador:
+
+- O backend rodará em http://127.0.0.1:5000
+- O frontend rodará em http://localhost:5317
