@@ -1,13 +1,8 @@
 <template>
   <div>
-    <h1>Realizando uma busca</h1>
-
-    <!-- Botão de busca -->
-    <button @click="buscarOperadores">Buscar Cadastro de Operadores</button>
-
-    <!--Tabela para exibir os operadores -->
-    <table >
-      <thead>
+    <h1>Lista de cadastros de operadoras com os registros mais relevantes</h1>
+    <table>
+    <thead>
         <tr>
           <th>Registro_ANS</th>
           <th>CNPJ</th>
@@ -31,88 +26,70 @@
           <th>Data_Registro_ANS</th>
         </tr>
       </thead>
-      <tbody>
-        <tr v-for="operador in operadores" :key="operador.registro_ans">
-          <td>{{ operador.registro_ans }}</td>
-          <td>{{ operador.cnpj }}</td>
-          <td>{{ operador.razao_socias }}</td>
-          <td>{{ operador.nome_fantasia }}</td>
-          <td>{{ operador.modalidade }}</td>
-          <td>{{ operador.logradouro }}</td>
-          <td>{{ operador.numero }}</td>
-          <td>{{ operador.complemento }}</td>
-          <td>{{ operador.bairro }}</td>
-          <td>{{ operador.cidade }}</td>
-          <td>{{ operador.uf }}</td>
-          <td>{{ operador.cep }}</td>
-          <td>{{ operador.ddd }}</td>
-          <td>{{ operador.telefone }}</td>
-          <td>{{ operador.fax }}</td>
-          <td>{{ operador.endereco_eletronico }}</td>
-          <td>{{ operador.representante }}</td>
-          <td>{{ operador.cargo_representante }}</td>
-          <td>{{ operador.regiao_de_comercializacao }}</td>
-          <td>{{ operador.data_registro_ans }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <!-- Caso não haja operadores cadastrados -->
-    <p>No records found</p>
+
+  <tbody>
+    <tr v-for="relatorio of relatorios" :key="relatorio.Registro_ANS">
+        <td>{{ relatorio.Registro_ANS }}</td>
+        <td>{{ relatorio.CNPJ }}</td>
+          <td>{{ relatorio.Razao_Social }}</td>
+          <td> {{ relatorio.Nome_Fantasia }}</td>
+          <td>{{ relatorio.Modalidade }}</td>
+          <td>{{ relatorio.Logradouro }}</td>
+          <td>{{ relatorio.Numero }}</td>
+          <td>{{ relatorio.Complemento }}</td>
+          <td>{{ relatorio.Bairro }}</td>
+          <td>{{ relatorio.Cidade }}</td>
+          <td>{{ relatorio.UF }}</td>
+          <td>{{ relatorio.CEP }}</td>
+          <td>{{ relatorio.DDD }}</td>
+          <td>{{ relatorio.Telefone }}</td>
+          <td>{{ relatorio.Fax }}</td>
+          <td>{{ relatorio.Endereco_eletronico }}</td>
+          <td>{{ relatorio.Representante }}</td>
+          <td>{{ relatorio.Cargo_Representante }}</td>
+          <td>{{ relatorio.Regiao_de_Comercializacao }}</td>
+          <td>{{ relatorio.Data_Registro_ANS }}</td>
+
+    </tr>
+  </tbody>
+  </table>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import Relatorio from './services/relatorios'
 
 export default {
-  data() {
+  data(){
     return {
-      operadores: []  // Armazenará os dados dos operadores
-    };
-  },
-  methods: {
-    // Método que será chamado ao clicar no botão
-    buscarOperadores() {
-      axios.get('http://localhost:5000/api/operadores')  // Requisição ao servidor
-        .then(response => {
-          this.operadores = response.data;  // Atualiza a lista de operadores com os dados retornados
-        })
-        .catch(error => {
-          console.error("Erro ao buscar operadores:", error);
-        });
+      relatorios: []
     }
+  },
+  mounted(){
+    Relatorio.listar().then(resposta =>{
+      this.relatorios = resposta.data
+    })
   }
-};
+}
 </script>
 
 <style scoped>
-/* Estilos para a tabela */
 table {
-  width: 100%;
+  text-align: center;
   border-collapse: collapse;
-  margin-top: 20px;
 }
 
-th, td {
-  padding: 8px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-
-
-button {
-  padding: 10px 15px;
-  font-size: 16px;
-  margin-bottom: 20px;
-  cursor: pointer;
+th {
   background-color: #4CAF50;
   color: white;
-  border: none;
-  border-radius: 4px;
+  padding: 12px;
+  font-size: 12px;
+  border: 1px solid white;
 }
 
-button:hover {
-  background-color: #45a049;
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 10px;
 }
 </style>
