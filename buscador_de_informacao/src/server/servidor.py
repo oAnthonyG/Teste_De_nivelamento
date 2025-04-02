@@ -9,7 +9,7 @@ CORS(app, origins='http://localhost:5173', methods=['GET'], allow_headers=['Cont
 conexao = MySQLdb.connect(
     host='localhost',
     user='root',
-    password='@Myn051021',
+    password='password',
     database='dev_teste_de_nivelamento'
 
 )
